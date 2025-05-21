@@ -52,7 +52,7 @@ rm ${LNCR_ZIP}
 
 # Mount the qcow2 image
 sudo mkdir mntfs
-sudo modprobe nbd
+sudo modprobe nbd max_part=16
 sudo qemu-nbd -c /dev/nbd0 --read-only ./${ROOTFS_FN}
 waitFile /dev/nbd0p5 "a" 60
 sudo mount -o ro /dev/nbd0p5 mntfs
