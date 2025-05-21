@@ -2,6 +2,9 @@ name: CI 8
 
 on:
   workflow_dispatch:
+  push:
+    tags:
+      - '*'
 
 jobs:
   build:
