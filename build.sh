@@ -55,6 +55,7 @@ sudo mkdir mntfs
 sudo modprobe nbd max_part=16
 sudo qemu-nbd -c /dev/nbd0 --read-only ./${ROOTFS_FN}
 waitFile /dev/nbd0p5 "a" 60
+sudo fdisk -l /dev/nbd0
 sudo mount -o ro /dev/nbd0p5 mntfs
 
 # Clone the qcow2 image contents to a writable directory
