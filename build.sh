@@ -54,9 +54,8 @@ rm ${LNCR_ZIP}
 sudo mkdir mntfs
 sudo modprobe nbd max_part=16
 sudo qemu-nbd -c /dev/nbd0 --read-only ./${ROOTFS_FN}
-waitFile /dev/nbd0p5 "a" 60
-sudo fdisk -l /dev/nbd0
-sudo mount -o ro /dev/nbd0p5 mntfs
+waitFile /dev/nbd0p4 "a" 30
+sudo mount -o ro /dev/nbd0p4 mntfs
 
 # Clone the qcow2 image contents to a writable directory
 sudo cp -a mntfs rootfs
@@ -64,7 +63,7 @@ sudo cp -a mntfs rootfs
 # Unmount the qcow2 image
 sudo umount mntfs
 sudo qemu-nbd -d /dev/nbd0
-waitFile /dev/nbd0p5 "d" 60
+waitFile /dev/nbd0p4 "d" 30
 sudo rmmod nbd
 sudo rmdir mntfs
 
