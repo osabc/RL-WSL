@@ -3,13 +3,13 @@
 # Environment variables for the Rocky Linux cloud image
 ARCH="x86_64"
 OS_MAJOR_VER="8"
-OS_FULL_VER="8.8"
-ROOTFS_VER="8.8-20230518.0"
+OS_FULL_VER="8.10"
+ROOTFS_VER="8.10-20240528.0"
 ROOTFS_FN="Rocky-${OS_MAJOR_VER}-GenericCloud-Base-${ROOTFS_VER}.${ARCH}.qcow2"
 ROOTFS_URL="https://dl.rockylinux.org/pub/rocky/${OS_FULL_VER}/images/${ARCH}/${ROOTFS_FN}"
 
 # Environment variables for Yuk7's wsldl
-LNCR_BLD="22020900"
+LNCR_BLD="24102000"
 LNCR_ZIP="icons.zip"
 LNCR_NAME="Rocky"
 LNCR_FN=${LNCR_NAME}.exe
